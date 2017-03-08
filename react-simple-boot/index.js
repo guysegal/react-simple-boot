@@ -1,1 +1,1 @@
-export default BootComponent = require('./BootComponent')
+export default SimpleBoot = require('./SimpleBoot').default;

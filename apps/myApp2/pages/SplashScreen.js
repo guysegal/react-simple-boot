@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
 const SplashScreen = (props) => <View style={styles.container} />;
 
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 100,
     height: 100,
-    backgroundColor: 'red',
+    backgroundColor: 'blue',
   }  
 });
 
