@@ -1,11 +1,9 @@
 import {Observable} from 'rx';
-import {createStore} from 'redux';
-import rootReducer from '../../state/rootReducer';
 
-export default ({dispatch}) => {
+export default (store) => {
     const subscription = Observable.interval(2000)
         .first()
-        .subscribe(() => dispatch({type: "someAction", payload: { someValue: 7}}));
+        .subscribe(() =>  {console.log("4444");store.someAction({someValue: 7})});
         
     return () => subscription.dispose();
 }

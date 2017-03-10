@@ -1,6 +1,8 @@
 import {createStore} from 'redux';
-import rootReducer from '../../state/rootReducer';
 
-export default ({dispatch}) => {
-    dispatch({type: "someAction", payload: {someValue: 1}});
+export default (store) => {
+    console.log("11111x1")
+    store.someAction({someValue: 2});
+    console.log("222222")
+    
 }

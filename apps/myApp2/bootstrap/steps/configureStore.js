@@ -1,6 +1,8 @@
+import {createStore} from 'redux';
+import rootReducer from '../../state/rootReducer';
+import {artifact} from '../../../../react-simple-boot';
+
 export default () => {
-    const store = require('../../state/appStore').default;
-    console.log("aaaa", store)
-    console.log("aaaa", store.someValue)        
-    return store;
+    const store = createStore(rootReducer);
+    return artifact({store});
 }

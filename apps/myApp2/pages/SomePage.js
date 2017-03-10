@@ -1,13 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import {observer} from 'mobx-react/native';
+import {connect} from 'react-redux';
 
-const SomePage = ({screenProps}) =>  {
-    return (<View style={{ marginTop: 300 }}>
+const SomePage = ({someValue}) => 
+    <View style={{ marginTop: 300 }}>
         <Text>
-            This is Some Page in MyApp2 with someValue={screenProps.someValue} 
+            This is Some Page in MyApp1 with someValue={someValue} 
         </Text>
-    </View>);
-}
+    </View>;
 
-export default SomePage;
+export default connect(state => ({someValue: state.someValue}))(SomePage);

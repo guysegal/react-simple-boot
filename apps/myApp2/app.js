@@ -1,13 +1,16 @@
 import React from 'react';
-import SimpleBoot from '../../react-simple-boot'
+import SimpleBootstrap from '../../react-simple-boot'
 
 import SplashScreen from './pages/SplashScreen';
-import bootstrapMyApp2 from './bootstrap/bootstrapMyApp2'
+import bootstrap from './bootstrap/run';
+import {measure, withReporter} from './measure';
 import MainPage from './pages/MainPage';
 
 export default (props) => 
-    <SimpleBoot 
-        renderSplash={(props) => <SplashScreen {...props} />} 
-        boot={() => bootstrapMyApp2()}
-        renderApp={(props) => <MainPage {...props} />} 
+    <SimpleBootstrap 
+        renderSplash={SplashScreen} 
+        bootstrap={bootstrap}
+        measureWith={measure(withReporter)}
+        renderApp={MainPage} 
     />
+

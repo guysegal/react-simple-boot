@@ -1,7 +1,6 @@
-import {createStore} from 'redux';
-import rootReducer from '../../state/rootReducer';
-
 export default () => {
-    const store = createStore(rootReducer);
+    const store = require('../../state/appStore').default;
+    console.log("aaaa", store)
+    console.log("aaaa", store.someValue)        
     return store;
 }

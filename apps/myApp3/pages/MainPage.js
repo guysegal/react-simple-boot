@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { Router, Scene } from 'react-native-router-flux';
+import {StackNavigator} from 'react-navigation';
+import {observer} from 'mobx-react/native';
 
-const MainPage = ({store}) =>
-  <Provider store={store}>
-    <Router>
-      <Scene key="root" hideNavBar hideTabBar>
-        <Scene key="SOME_PAGE" component={require('./SomePage').default} />
-      </Scene>
-    </Router>
-  </Provider>;
+import SomePage from './SomePage';
 
-export default MainPage;
+const Router = StackNavigator({
+  SomePage: { screen: SomePage }
+});
+
+const MainPage = ({store}) => {
+    return (<Router screenProps={{...store}}/>);
+}
+
+export default observer(MainPage);
 
