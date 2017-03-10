@@ -9,17 +9,16 @@ export default class SimpleBootstrap extends Component {
 
   componentDidMount() {
       const measure = this.props.measureWith || consoleMeasure;
-      this.props.bootstrap(this.props.initialProps, measure).then((result) => {
-          this.setState({
-              ready: true, 
-              artifacts: result.artifacts, 
-              disposables: result.disposables
-            });
-        });
+      this.props.bootstrap(this.props.initialProps, measure)
+        .then((result) => this.setState({
+            ready: true, 
+            artifacts: result.artifacts, 
+            disposables: result.disposables
+        }));        
   }
 
   componentWillUnmount() {
-      //this.state.disposables.dispose();
+      this.state.disposables.forEach(d);
   }
 
   render() {
