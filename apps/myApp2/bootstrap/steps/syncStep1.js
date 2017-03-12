@@ -1,4 +1,4 @@
-import {artifact} from '../../../../react-simple-boot';
+import {artifact} from '../../../../react-simple-bootstrap';
 
 export default () => {
     return artifact({test1: 1});

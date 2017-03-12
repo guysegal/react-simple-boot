@@ -1,4 +1,4 @@
-import {sequence, parallel} from '../../../react-simple-boot';
+import {sequence, parallel} from '../../../react-simple-bootstrap';
 
 export default (props, measure) => 
     sequence([

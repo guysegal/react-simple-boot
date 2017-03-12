@@ -1,5 +1,5 @@
 import React from 'react';
-import SimpleBootstrap from '../../react-simple-boot'
+import SimpleBootstrap from '../../react-simple-bootstrap'
 
 import SplashScreen from './pages/SplashScreen';
 import bootstrap from './bootstrap/run';
