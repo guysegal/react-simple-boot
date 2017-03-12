@@ -12,6 +12,5 @@ export default (props) =>
         bootstrap={bootstrap}
         measureWith={measure(withReporter)}
         renderApp={MainPage} 
-        {...props}
-    />
+        {...props} />
 

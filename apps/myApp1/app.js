@@ -10,5 +10,4 @@ export default (props) =>
         renderSplash={SplashScreen} 
         bootstrap={bootstrap}
         renderApp={MainPage}
-        {...props}
-    />
+        {...props} />
