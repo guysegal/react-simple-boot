@@ -6,7 +6,7 @@ const syncStepWithParams = require('./steps/syncStepWithParams').default;
 const asyncStep = require('./steps/asyncStep').default;
 const listenerStep = require('./steps/listenerStep').default;
 
-export default bootApp = async () => {
+export default bootApp = async (props) => {
   const store = configureStore();  
   syncStep();
   syncStepWithParams(store);  
@@ -15,6 +15,6 @@ export default bootApp = async () => {
   
   return {
       artifacts: {store},
-      shutdown: new CompositeDisposable([disposeListener])
+      disposables: new CompositeDisposable([disposeListener])
   }
 }

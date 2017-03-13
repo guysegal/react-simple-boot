@@ -1,13 +1,13 @@
 import React from 'react';
-import SimpleBootstrap from '../../react-simple-bootstrap'
+import Bootstrapper from '../../react-bootstrapper'
 
 import SplashScreen from './pages/SplashScreen';
 import bootstrap from './bootstrap/run'
 import MainPage from './pages/MainPage';
 
 export default (props) => 
-    <SimpleBootstrap 
-        renderSplash={SplashScreen} 
+    <Bootstrapper 
+        renderBefore={SplashScreen} 
         bootstrap={bootstrap}
-        renderApp={MainPage}
+        renderAfter={MainPage}
         {...props} />

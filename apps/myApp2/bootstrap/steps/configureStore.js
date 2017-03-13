@@ -1,8 +1,8 @@
 import {createStore} from 'redux';
 import rootReducer from '../../state/rootReducer';
-import {artifact} from '../../../../react-simple-bootstrap';
+import {artifact} from '../../../../react-bootstrapper';
 
 export default () => {
     const store = createStore(rootReducer);
-    return artifact({store});
+    return {store};
 }

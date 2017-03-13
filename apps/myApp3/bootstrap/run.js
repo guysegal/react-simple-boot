@@ -15,6 +15,6 @@ export default bootApp = async () => {
   
   return {
       artifacts: {store},
-      shutdown: new CompositeDisposable([disposeListener])
+      disposables: new CompositeDisposable([disposeListener])
   }
 }

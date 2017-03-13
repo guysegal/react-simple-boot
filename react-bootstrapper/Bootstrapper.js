@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import consoleMeasure from './consoleMeasure';
 
-export default class SimpleBootstrap extends Component {
+export default class Bootstrapper extends Component {
   constructor() {
       super();
       this.state = {ready: false}
@@ -22,13 +22,13 @@ export default class SimpleBootstrap extends Component {
   }
 
   render() {
-      let {renderSplash, renderApp, boot,  ...p} = this.props;
-      renderSplash = renderSplash || (() => null);
+      let {renderBefore, renderAfter, boot,  ...p} = this.props;
+      renderBefore = renderBefore || (() => null);
       if (!this.state.ready) {
-          return renderSplash(p);
+          return renderBefore(p);
       }
       else {
-          return renderApp({...p, ...this.state.artifacts});
+          return renderAfter({...p, ...this.state.artifacts});
       } 
   }
 }
